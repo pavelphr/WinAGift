@@ -1,0 +1,23 @@
+require 'autotest/growl'		
+		
+# Don’t Clear the Terminal:		
+# Add the following to your ~/.autotest 		
+#  if you don’t want the terminal to be cleared 		
+#  before running a test:		
+		
+# Autotest::Growl::clear_terminal = false		
+		
+# Hide the Label:		
+# If you prefer the Growl notifications not to show		
+#  labels such as “LABEL: All tests have passed”, 		
+#  dd the following to your ~/.autotest:		
+		
+# Autotest::Growl::hide_label = true		
+		
+		
+# forWin: the spec\integration\layout_links_spec.rb SHOULD tested also:		
+Autotest.add_hook :initialize do |autotest|		
+	autotest.add_mapping(%r%^spec/(requests)/.*rb$%) do |filename, _|	
+		filename
+	end	
+end		
