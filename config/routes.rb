@@ -1,4 +1,15 @@
 WinAGift::Application.routes.draw do
+#  get "games/choose"
+#  get "games/play"
+#  get "games/win"
+#  get "games/share"
+
+  match '/choose', :to => 'games#choose'
+  match '/play',   :to => 'games#play'
+  match '/win',    :to => 'games#win'
+  match '/share',  :to => 'games#share'
+  root :to => 'games#choose'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
